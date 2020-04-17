@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { NativeModules } from "react-native";
 
-export function useKeepAwake() {}
+export function activateKeepAwake() {
+  NativeModules.KCKeepAwake.activate();
+}
 
-export function activateKeepAwake() {}
+export function deactivateKeepAwake() {
+  NativeModules.KCKeepAwake.deactivate();
+}
 
-export function deactivateKeepAwake() {}
+export function useKeepAwake() {
+  useEffect(() => {
+    activateKeepAwake();
+    return () => deactivateKeepAwake();
+  }, []);
+}
 
 export default function KeepAwake() {
+  useEffect(() => {
+    activateKeepAwake();
+    return () => deactivateKeepAwake();
+  }, []);
+
   return null;
 }
