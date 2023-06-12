@@ -8,6 +8,10 @@ As the first step, install this module:
 
 `yarn add @sayem314/react-native-keep-awake`
 
+#### React Native new architecture
+
+You must use `react-native-keep-awake@1.2.0` or newer if you want to use the [RN new architecture](https://reactnative.dev/docs/the-new-architecture/landing-page).
+
 ## Usage
 
 #### example: hooks
