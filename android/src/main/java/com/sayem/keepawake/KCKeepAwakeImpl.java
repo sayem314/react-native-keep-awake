@@ -1,29 +1,24 @@
-// Adapted from
-// https://github.com/gijoehosaphat/react-native-keep-screen-on
-
 package com.sayem.keepawake;
 
 import android.app.Activity;
 import android.view.WindowManager;
-
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContextBaseJavaModule;
-import com.facebook.react.bridge.ReactMethod;
 
-public class KCKeepAwake extends ReactContextBaseJavaModule {
+import android.util.Log;
 
-    public KCKeepAwake(ReactApplicationContext reactContext) {
-        super(reactContext);
+class KCKeepAwakeImpl {
+
+    public static final String NAME = "ReactNativeKCKeepAwake";
+
+    static ReactApplicationContext RCTContext;
+
+    public KCKeepAwakeImpl(ReactApplicationContext reactContext) {
+        RCTContext = reactContext;
     }
 
-    @Override
-    public String getName() {
-        return "KCKeepAwake";
-    }
-
-    @ReactMethod
     public void activate() {
-        final Activity activity = getCurrentActivity();
+        Log.v(NAME, "activate impl");
+        final Activity activity = RCTContext.getCurrentActivity();
 
         if (activity != null) {
             activity.runOnUiThread(new Runnable() {
@@ -35,9 +30,9 @@ public class KCKeepAwake extends ReactContextBaseJavaModule {
         }
     }
 
-    @ReactMethod
     public void deactivate() {
-        final Activity activity = getCurrentActivity();
+        Log.v(NAME, "deactivate impl");
+        final Activity activity = RCTContext.getCurrentActivity();
 
         if (activity != null) {
             activity.runOnUiThread(new Runnable() {

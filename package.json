@@ -25,5 +25,13 @@
     "sleep"
   ],
   "author": "Sayem Chowdhury",
-  "license": "MIT"
+  "license": "MIT",
+  "codegenConfig": {
+    "name": "ReactNativeKCKeepAwakeSpec",
+    "type": "modules",
+    "jsSrcsDir": ".",
+    "android": {
+      "javaPackageName": "com.sayem.keepawake"
+    }
+  }
 }
