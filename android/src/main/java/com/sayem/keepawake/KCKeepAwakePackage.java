@@ -1,33 +1,46 @@
-// Adapted from
-// https://github.com/gijoehosaphat/react-native-keep-screen-on
-
 package com.sayem.keepawake;
 
-import com.facebook.react.ReactPackage;
-import com.facebook.react.bridge.JavaScriptModule;
+import androidx.annotation.Nullable;
+
+import com.facebook.react.TurboReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.uimanager.ViewManager;
+import com.facebook.react.module.model.ReactModuleInfo;
+import com.facebook.react.module.model.ReactModuleInfoProvider;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-public class KCKeepAwakePackage implements ReactPackage {
+public class KCKeepAwakePackage extends TurboReactPackage {
 
+    @Nullable
     @Override
-    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        List<NativeModule> modules = new ArrayList<>();
-        modules.add(new KCKeepAwake(reactContext));
-        return modules;
+    public NativeModule getModule(String name, ReactApplicationContext reactContext) {
+        if (name.equals(KCKeepAwakeImpl.NAME)) {
+            return new KCKeepAwake(reactContext);
+        } else {
+            return null;
+        }
     }
 
-    // Deprecated RN 0.47
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
-    }
-
     @Override
-    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return new ArrayList<>();
+    public ReactModuleInfoProvider getReactModuleInfoProvider() {
+        return () -> {
+            final Map<String, ReactModuleInfo> moduleInfos = new HashMap<>();
+            boolean isTurboModule = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
+            moduleInfos.put(
+                    KCKeepAwakeImpl.NAME,
+                    new ReactModuleInfo(
+                            KCKeepAwakeImpl.NAME,
+                            KCKeepAwakeImpl.NAME,
+                            false, // canOverrideExistingModule
+                            false, // needsEagerInit
+                            false, // hasConstants
+                            false, // isCxxModule
+                            isTurboModule // isTurboModule
+                    ));
+            return moduleInfos;
+        };
     }
 
 }
