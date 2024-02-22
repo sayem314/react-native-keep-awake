@@ -32,6 +32,9 @@
     "jsSrcsDir": ".",
     "android": {
       "javaPackageName": "com.sayem.keepawake"
+    },
+    "windows": {
+      "namespace": "ReactNativeKCKeepAwake"
     }
   }
 }

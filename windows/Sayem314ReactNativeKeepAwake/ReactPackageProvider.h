@@ -3,7 +3,7 @@
 
 using namespace winrt::Microsoft::ReactNative;
 
-namespace winrt::Sayem314ReactNativeKeepAwake::implementation
+namespace winrt::ReactNativeKcKeepAwake::implementation
 {
     struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider>
     {
@@ -11,11 +11,11 @@ namespace winrt::Sayem314ReactNativeKeepAwake::implementation
 
         void CreatePackage(IReactPackageBuilder const &packageBuilder) noexcept;
     };
-} // namespace winrt::Sayem314ReactNativeKeepAwake::implementation
+} // namespace winrt::ReactNativeKcKeepAwake::implementation
 
-namespace winrt::Sayem314ReactNativeKeepAwake::factory_implementation
+namespace winrt::ReactNativeKcKeepAwake::factory_implementation
 {
 
 struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider, implementation::ReactPackageProvider> {};
 
-} // namespace winrt::Sayem314ReactNativeKeepAwake::factory_implementation
+} // namespace winrt::ReactNativeKcKeepAwake::factory_implementation

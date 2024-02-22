@@ -8,7 +8,7 @@
     <MinimalCoreWin>true</MinimalCoreWin>
     <ProjectGuid>{6467971d-c7b0-4847-b428-1d85ce018c1a}</ProjectGuid>
     <ProjectName>Sayem314ReactNativeKeepAwake</ProjectName>
-    <RootNamespace>Sayem314ReactNativeKeepAwake</RootNamespace>
+    <RootNamespace>ReactNativeKcKeepAwake</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>17.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>

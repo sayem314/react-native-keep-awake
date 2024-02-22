@@ -1,4 +1,5 @@
 .watchmanconfig
+node_modules
 
 # Android
 *.iml
