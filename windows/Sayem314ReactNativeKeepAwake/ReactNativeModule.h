@@ -2,7 +2,7 @@
 
 #include "JSValue.h"
 #include "NativeModules.h"
-
+#include "winrt/Windows.System.Display.h"
 
 using namespace winrt::Microsoft::ReactNative;
 using namespace winrt::Windows::System::Display;
