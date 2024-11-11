@@ -7,7 +7,7 @@
 #endif
 
 #if RCT_NEW_ARCH_ENABLED
-#import <ReactNativeKCKeepAwakeSpec/ReactNativeKCKeepAwakeSpec.h>
+#import <ReactCodegen/ReactNativeKCKeepAwakeSpec/ReactNativeKCKeepAwakeSpec.h>
 #endif
 
 @interface ReactNativeKCKeepAwake : NSObject <RCTBridgeModule>
