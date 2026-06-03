@@ -1,6 +1,6 @@
 {
   "name": "@sayem314/react-native-keep-awake",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Keep the screen from going to sleep. iOS, Android and Web.",
   "main": "index",
   "repository": {
@@ -26,6 +26,10 @@
   ],
   "author": "Sayem Chowdhury",
   "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.82.0"
+  },
   "codegenConfig": {
     "name": "ReactNativeKCKeepAwakeSpec",
     "type": "modules",
